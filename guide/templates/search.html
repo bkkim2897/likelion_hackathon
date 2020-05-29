@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action ="{% url 'result' %}" method='GET'>
+    {% csrf_token %}
+        ShareGuide :  <input type='search' name ='query'>
+        <input type='submit' value='검색'>
+</form>
+{% endblock %}

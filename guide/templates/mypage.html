@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+내가 쓴 글
+{% for blog in blogs.all %}
+<a href="{% url 'guide_detail' blog.id %}"><div class= "container">
+<div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{blog.title}}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{blog.tag}}</li>
+    </ul>
+  </div>
+</div></a>
+<br>
+{% endfor %}
+<a href ="{% url 'guide_new' %}"><button type="button" class="btn btn-info">Guide</button></a>
+<a href ="{% url 'search' %}"><button type="button" class="btn btn-info">Search</button></a>
+
+{% endblock %}

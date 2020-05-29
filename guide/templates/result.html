@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for blog in blogs%}
+    제목 : {{blog.title}}
+    내용 : {{blog.content}}
+{% empty %}
+    검색결과가 없습니다.
+{% endfor %}
+{% endblock %}
